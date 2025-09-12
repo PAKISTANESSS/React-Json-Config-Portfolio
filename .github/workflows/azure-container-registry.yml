@@ -34,13 +34,24 @@ jobs:
           az provider register -n Microsoft.App --wait
           az provider register -n Microsoft.OperationalInsights --wait
 
-      - name: Build
+      - name: Build Docker Image
         run: |
           docker build -t $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG -f BFC.Dev.Web/Dockerfile .
 
       - name: Push Docker Image
         run: |
           docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
+
+      - name: Ensure Container Apps Environment can pull from ACR
+        run: |
+          ENV_IDENTITY=$(az containerapp env show \
+            --name ${{ secrets.CONTAINERAPPS_ENVIRONMENT }} \
+            --resource-group $RESOURCE_GROUP \
+            --query identity.principalId -o tsv)
+          az role assignment create \
+            --assignee $ENV_IDENTITY \
+            --role AcrPull \
+            --scope $(az acr show --name $ACR_NAME --query id -o tsv) || echo "Role assignment may already exist"
 
       - name: Deploy to Azure Container Apps
         run: |
@@ -59,4 +70,3 @@ jobs:
               --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG \
               --target-port 8080 \
               --ingress external
-          fi
