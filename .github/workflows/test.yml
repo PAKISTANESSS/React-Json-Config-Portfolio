@@ -28,7 +28,7 @@ jobs:
       # 3️⃣ Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/$OWNER/$APP_NAME:latest .
+          docker build -t ghcr.io/$OWNER/$APP_NAME:latest -f BFC.Dev.Web/Dockerfile .
 
       # 4️⃣ Push Docker image
       - name: Push Docker Image
