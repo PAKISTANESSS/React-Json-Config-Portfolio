@@ -27,9 +27,9 @@ jobs:
       # 3️⃣ Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/${{ env.APP_NAME }}:latest .
+          docker build -t ghcr.io/${{ github.repository_owner | toLowerCase() }}/${{ env.APP_NAME | toLowerCase() }}:latest .
 
       # 4️⃣ Push Docker image
       - name: Push Docker Image
         run: |
-          docker push ghcr.io/${{ github.repository_owner }}/${{ env.APP_NAME }}:latest
+          docker push ghcr.io/${{ github.repository_owner | toLowerCase() }}/${{ env.APP_NAME | toLowerCase() }}:latest
