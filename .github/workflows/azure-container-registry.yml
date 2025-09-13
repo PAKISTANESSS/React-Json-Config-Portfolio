@@ -1,4 +1,4 @@
-name: Build, Push and Deploy to Azure Container Apps
+name: Build, Push and Deploy to Azure Container Apps (Managed Identity)
 
 on:
   push:
@@ -9,6 +9,7 @@ env:
   ACR_NAME: ${{ secrets.ACR_NAME }}
   RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
   CONTAINER_APP_NAME: ${{ secrets.CONTAINER_APP_NAME }}
+  CONTAINERAPPS_ENVIRONMENT: ${{ secrets.CONTAINERAPPS_ENVIRONMENT }}
   IMAGE_NAME: bfcmeweb
   IMAGE_TAG: latest
 
@@ -48,46 +49,40 @@ jobs:
         run: |
           docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
 
-      # # 7️⃣ Ensure Container Apps Environment exists and has ACR pull access
-      # - name: Ensure Container Apps Environment & AcrPull
-      #   run: |
-      #     # Create environment if it doesn't exist
-      #     if ! az containerapp env show --name ${{ secrets.CONTAINERAPPS_ENVIRONMENT }} --resource-group $RESOURCE_GROUP > /dev/null 2>&1; then
-      #       echo "Creating Container Apps Environment..."
-      #       az containerapp env create \
-      #         --name ${{ secrets.CONTAINERAPPS_ENVIRONMENT }} \
-      #         --resource-group $RESOURCE_GROUP \
-      #         --location westeurope
-      #     else
-      #       echo "Container Apps Environment exists."
-      #     fi
+      # 7️⃣ Ensure Container Apps Environment exists (with Managed Identity)
+      - name: Ensure Container Apps Environment with Managed Identity
+        run: |
+          if ! az containerapp env show --name $CONTAINERAPPS_ENVIRONMENT --resource-group $RESOURCE_GROUP > /dev/null 2>&1; then
+            echo "Creating Container Apps Environment with Managed Identity..."
+            az containerapp env create \
+              --name $CONTAINERAPPS_ENVIRONMENT \
+              --resource-group $RESOURCE_GROUP \
+              --location westeurope \
+              --enable-managed-identity
+          else
+            echo "Container Apps Environment exists."
+          fi
 
-      #     # Assign AcrPull to environment managed identity
-      #     ENV_IDENTITY=$(az containerapp env show \
-      #       --name ${{ secrets.CONTAINERAPPS_ENVIRONMENT }} \
-      #       --resource-group $RESOURCE_GROUP \
-      #       --query identity.principalId -o tsv)
-      #     az role assignment create \
-      #       --assignee $ENV_IDENTITY \
-      #       --role AcrPull \
-      #       --scope $(az acr show --name $ACR_NAME --query id -o tsv) || echo "Role assignment may already exist"
+          # Assign AcrPull to environment managed identity
+          ENV_IDENTITY=$(az containerapp env show \
+            --name $CONTAINERAPPS_ENVIRONMENT \
+            --resource-group $RESOURCE_GROUP \
+            --query identity.principalId -o tsv)
+
+          ACR_ID=$(az acr show --name $ACR_NAME --resource-group $RESOURCE_GROUP --query id -o tsv)
+
+          az role assignment create \
+            --assignee $ENV_IDENTITY \
+            --role AcrPull \
+            --scope $ACR_ID || echo "AcrPull role assignment may already exist"
 
       # 8️⃣ Deploy Container App (create or update)
-      - name: Set Azure Secrets
-        run: |
-          az containerapp secret set \
-            --name $CONTAINER_APP_NAME \
-            --resource-group $RESOURCE_GROUP \
-            --registry-server $ACR_NAME.azurecr.io \
-            --registry-username $ACR_NAME \
-            --registry-password ${{ secrets.ACR_PASSWORD }}
-
       - name: Deploy to Azure Container Apps
         run: |
           if az containerapp show --name $CONTAINER_APP_NAME --resource-group $RESOURCE_GROUP > /dev/null 2>&1; then
             echo "Container App exists, updating..."
             az containerapp update \
-               --name $CONTAINER_APP_NAME \
+              --name $CONTAINER_APP_NAME \
               --resource-group $RESOURCE_GROUP \
               --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
           else
