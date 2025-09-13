@@ -34,7 +34,7 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_7F0B0E69C8014177A0D51C0540627369 }}/bfcdevme:${{ github.sha }}
-          file: ./Dockerfile
+          file: BFC.Dev.Web/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
