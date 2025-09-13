@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  ACR_NAME: ${{ secrets.ACR_NAME }}
+  ACR_NAME: ${{ variables.ACR_NAME }}
   RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
   CONTAINER_APP_NAME: ${{ secrets.CONTAINER_APP_NAME }}
   IMAGE_NAME: bfcmeweb
@@ -89,5 +89,8 @@ jobs:
               --environment ${{ secrets.CONTAINERAPPS_ENVIRONMENT }} \
               --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG \
               --target-port 8080 \
-              --ingress external
+              --ingress external \
+              --registry-login-server $ACR_NAME.azurecr.io \
+              --registry-username ${{ $ACR_NAME }} \
+              --registry-password ${{ secrets.ACR_PASSWORD }}
           fi
