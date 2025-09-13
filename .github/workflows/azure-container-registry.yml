@@ -81,6 +81,9 @@ jobs:
               --name $CONTAINER_APP_NAME \
               --resource-group $RESOURCE_GROUP \
               --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
+              --registry-login-server $ACR_NAME.azurecr.io \
+              --registry-username bfcpakistanesss \
+              --registry-password ${{ secrets.ACR_PASSWORD }}
           else
             echo "Container App does not exist, creating..."
             az containerapp create \
