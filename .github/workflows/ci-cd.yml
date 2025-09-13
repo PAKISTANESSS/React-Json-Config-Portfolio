@@ -45,7 +45,7 @@ jobs:
 
       # 6️⃣ Deploy to Azure App Service
       - name: Deploy to Azure App Service
-        uses: azure/webapps-container-deploy@v2
+        uses: azure/webapps-container-deploy@v1
         with:
           app-name: $AZURE_APP_NAME
           images: ghcr.io/$OWNER/$LOCAL_APP_NAME:latest
