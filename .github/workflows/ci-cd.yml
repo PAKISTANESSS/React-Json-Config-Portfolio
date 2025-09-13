@@ -8,6 +8,7 @@ on:
 env:
   APP_NAME: bfcdevme
   OWNER: pakistanesss
+  DOCKER_FILE_PATH: BFC.Dev.Web
 
 jobs:
   build-and-push:
@@ -28,7 +29,7 @@ jobs:
       # 3️⃣ Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t ghcr.io/$OWNER/$APP_NAME:latest -f BFC.Dev.Web/Dockerfile .
+          docker build -t ghcr.io/$OWNER/$APP_NAME:latest -f $DOCKER_FILE_PATH/Dockerfile .
 
       # 4️⃣ Push Docker image
       - name: Push Docker Image
