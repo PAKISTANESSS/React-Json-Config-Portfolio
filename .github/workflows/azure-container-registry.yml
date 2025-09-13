@@ -91,6 +91,6 @@ jobs:
               --target-port 8080 \
               --ingress external \
               --registry-login-server $ACR_NAME.azurecr.io \
-              --registry-username ${{ $ACR_NAME }} \
+              --registry-username $ACR_NAME \
               --registry-password ${{ secrets.ACR_PASSWORD }}
           fi
