@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  #ACR_NAME: ${{ vars.ACR_NAME }}
+  #ACR_NAME: $ACR_NAME
   RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
   CONTAINER_APP_NAME: ${{ secrets.CONTAINER_APP_NAME }}
   IMAGE_NAME: bfcmeweb
@@ -30,7 +30,7 @@ jobs:
       # 3️⃣ Docker login to ACR
       - name: Docker Login to ACR
         run: |
-          az acr login --name ${{ vars.ACR_NAME }}
+          az acr login --name $ACR_NAME
 
       # 4️⃣ Register Azure providers
       - name: Register Azure Providers
@@ -41,12 +41,12 @@ jobs:
       # 5️⃣ Build Docker image
       - name: Build Docker Image
         run: |
-          docker build -t ${{ vars.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$IMAGE_TAG -f BFC.Dev.Web/Dockerfile .
+          docker build -t $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG -f BFC.Dev.Web/Dockerfile .
 
       # 6️⃣ Push Docker image
       - name: Push Docker Image
         run: |
-          docker push ${{ vars.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
+          docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
 
       # 7️⃣ Ensure Container Apps Environment exists and has ACR pull access
       - name: Ensure Container Apps Environment & AcrPull
@@ -70,7 +70,7 @@ jobs:
           az role assignment create \
             --assignee $ENV_IDENTITY \
             --role AcrPull \
-            --scope $(az acr show --name ${{ vars.ACR_NAME }} --query id -o tsv) || echo "Role assignment may already exist"
+            --scope $(az acr show --name $ACR_NAME --query id -o tsv) || echo "Role assignment may already exist"
 
       # 8️⃣ Deploy Container App (create or update)
       - name: Deploy to Azure Container Apps
@@ -80,17 +80,17 @@ jobs:
             az containerapp update \
               --name $CONTAINER_APP_NAME \
               --resource-group $RESOURCE_GROUP \
-              --image ${{ vars.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
+              --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG
           else
             echo "Container App does not exist, creating..."
             az containerapp create \
               --name $CONTAINER_APP_NAME \
               --resource-group $RESOURCE_GROUP \
               --environment ${{ secrets.CONTAINERAPPS_ENVIRONMENT }} \
-              --image ${{ vars.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$IMAGE_TAG \
+              --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG \
               --target-port 8080 \
               --ingress external \
-              --registry-login-server ${{ vars.ACR_NAME }}.azurecr.io \
-              --registry-username ${{ ${{ vars.ACR_NAME }} }} \
+              --registry-login-server $ACR_NAME.azurecr.io \
+              --registry-username ${{ $ACR_NAME }} \
               --registry-password ${{ secrets.ACR_PASSWORD }}
           fi
