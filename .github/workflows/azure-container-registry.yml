@@ -90,3 +90,4 @@ jobs:
               --image $ACR_NAME.azurecr.io/$IMAGE_NAME:$IMAGE_TAG \
               --target-port 8080 \
               --ingress external
+          fi
