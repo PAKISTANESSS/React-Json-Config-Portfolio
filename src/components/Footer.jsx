@@ -25,14 +25,22 @@ function Footer() {
             </ul>
           </div>
           
-          <div className="footer-section">
-            <h3>Connect</h3>
-            <div className="footer-social">
-              <a href={config.social.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href={config.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href={config.social.twitter} aria-label="Twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+          {(config.social?.github || config.social?.linkedin || config.social?.twitter) && (
+            <div className="footer-section">
+              <h3>Connect</h3>
+              <div className="footer-social">
+                {config.social?.github && (
+                  <a href={config.social.github} aria-label="GitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
+                )}
+                {config.social?.linkedin && (
+                  <a href={config.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                )}
+                {config.social?.twitter && (
+                  <a href={config.social.twitter} aria-label="Twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
         
         <div className="footer-bottom">

@@ -1,28 +1,27 @@
 {
   "personal": {
-    "name": "Your Name",
-    "title": "Full Stack Developer | Designer | Problem Solver",
+    "name": "Bernardo C.",
+    "title": "Full Stack Developer | Problem Solver",
     "description": "I create beautiful, functional, and user-centered digital experiences.",
     "aboutText": [
-      "I'm a passionate developer with a love for creating elegant solutions to complex problems. With years of experience in web development, I specialize in building responsive and user-friendly applications.",
+      "I'm a passionate developer with a love for creating solutions to complex problems. With years of experience in web development, I specialize in building responsive and user-friendly applications.",
       "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community."
     ]
   },
   "stats": {
-    "experience": "5+",
+    "experience": "10+",
     "experienceLabel": "Years Experience",
-    "projects": "50+",
+    "projects": "...",
     "projectsLabel": "Projects Completed",
-    "clients": "30+",
+    "clients": "...",
     "clientsLabel": "Happy Clients"
   },
   "skills": [
-    { "name": "React", "level": 90 },
-    { "name": "JavaScript", "level": 85 },
-    { "name": "Node.js", "level": 80 },
+    { "name": "C#", "level": 80 },
+    { "name": "React", "level": 70 },
+    { "name": "Node.js", "level": 40 },
     { "name": "CSS/SASS", "level": 85 },
-    { "name": "TypeScript", "level": 75 },
-    { "name": "Python", "level": 70 }
+    { "name": "TypeScript", "level": 75 }
   ],
   "projects": [
     {
@@ -69,14 +68,14 @@
     }
   ],
   "contact": {
-    "email": "your.email@example.com",
-    "phone": "+1 (555) 123-4567",
-    "location": "Your City, Country"
+    "email": "",
+    "phone": "",
+    "location": "Almada, Portugal"
   },
   "social": {
-    "github": "https://github.com/yourusername",
-    "linkedin": "https://linkedin.com/in/yourusername",
-    "twitter": "https://twitter.com/yourusername"
+    "github": "https://github.com/pakistanesss",
+    "linkedin": "",
+    "twitter": ""
   }
 }
 

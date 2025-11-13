@@ -117,6 +117,43 @@ You don't need to touch any React component code - just edit the JSON file and t
 
 ---
 
+#### 🎯 Conditional Display - Hide Contact Info
+
+**The website automatically hides contact fields that are empty or don't exist!**
+
+Each contact information field (email, phone, location) will only display if it has a value. This is useful if you only want to share certain contact methods.
+
+**Example - Only show email:**
+```json
+"contact": {
+  "email": "your.email@example.com",
+  "phone": "",
+  "location": ""
+}
+```
+Result: Only the email field will appear in the contact section.
+
+**Example - Hide phone number:**
+```json
+"contact": {
+  "email": "your.email@example.com",
+  "location": "San Francisco, USA"
+}
+```
+Result: Email and location will display, but no phone number field.
+
+**Example - Show all contact info:**
+```json
+"contact": {
+  "email": "your.email@example.com",
+  "phone": "+1 (555) 123-4567",
+  "location": "Your City, Country"
+}
+```
+Result: All three contact methods will be displayed.
+
+---
+
 ### Social Media
 
 ```json
@@ -136,6 +173,48 @@ You don't need to touch any React component code - just edit the JSON file and t
 - Replace "yourusername" with your actual username
 - Use full URLs including "https://"
 - Links will open in new tabs automatically
+
+---
+
+#### 🎯 Conditional Display - Hide Social Links
+
+**The website automatically hides social links that are empty or don't exist!**
+
+This means you only see the social media links you actually configure. If you don't have a Twitter account or don't want to display it, simply leave it empty or remove it from the config.
+
+**Method 1 - Set to empty string:**
+```json
+"social": {
+  "github": "https://github.com/yourusername",
+  "linkedin": "https://linkedin.com/in/yourusername",
+  "twitter": ""
+}
+```
+Result: Only GitHub and LinkedIn icons will appear on the website.
+
+**Method 2 - Remove the field entirely:**
+```json
+"social": {
+  "github": "https://github.com/yourusername",
+  "linkedin": "https://linkedin.com/in/yourusername"
+}
+```
+Result: Same as above - only GitHub and LinkedIn will display.
+
+**Method 3 - Hide all social links:**
+```json
+"social": {
+  "github": "",
+  "linkedin": "",
+  "twitter": ""
+}
+```
+Result: The entire "Connect" section in the footer will be hidden, and no social icons will appear in the contact section.
+
+**Where social links appear:**
+- Contact section (as icon buttons)
+- Footer (as text links under "Connect")
+- Both locations automatically hide links based on your config!
 
 ---
 
