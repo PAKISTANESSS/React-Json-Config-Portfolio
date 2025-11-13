@@ -23,25 +23,12 @@
 
 <!-- Add screenshots to help explain your changes -->
 
-## Theme Tested
-
-<!-- Which theme(s) did you test your changes with? -->
-
-- [ ] Purple Dream
-- [ ] Ocean Blue
-- [ ] Sunset Orange
-- [ ] Forest Green
-- [ ] Other: _____
 
 ## Checklist
 
 - [ ] My code follows the project's style guidelines
 - [ ] I have tested my changes locally
-- [ ] The build passes (`npm run build`)
-- [ ] The linter passes (`npm run lint`)
 - [ ] I have updated the documentation (if needed)
-- [ ] My changes work on mobile devices
-- [ ] I have tested with different themes
 
 ## Additional Notes
 
