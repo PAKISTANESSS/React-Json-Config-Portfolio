@@ -10,6 +10,50 @@ You don't need to touch any React component code - just edit the JSON file and t
 
 ## Configuration Structure
 
+### Theme Selection
+
+```json
+{
+  "theme": "purple"
+}
+```
+
+**Available Themes:**
+
+Choose from 10 beautiful pre-designed color themes. Simply set the `theme` field to one of these values:
+
+| Theme Name | Value | Description |
+|------------|-------|-------------|
+| 🟣 **Purple Dream** | `"purple"` | Elegant purple gradient (default) - Professional and modern |
+| 🔵 **Ocean Blue** | `"blue"` | Fresh blue gradient - Clean and calming |
+| 🌅 **Sunset Orange** | `"sunset"` | Warm pink to yellow gradient - Vibrant and energetic |
+| 🌲 **Forest Green** | `"forest"` | Teal to mint green gradient - Natural and refreshing |
+| 🔴 **Crimson Red** | `"crimson"` | Bold red gradient - Powerful and passionate |
+| 🌙 **Midnight Blue** | `"midnight"` | Dark blue gradient - Sophisticated and professional |
+| 🌸 **Sakura Pink** | `"sakura"` | Soft pink gradient - Gentle and elegant |
+| 🌈 **Aurora** | `"aurora"` | Mint to pink gradient - Dreamy and unique |
+| 🔥 **Fire** | `"fire"` | Red to orange gradient - Bold and dynamic |
+| 💜 **Lavender Dream** | `"lavender"` | Deep purple gradient - Rich and luxurious |
+
+**Example:**
+```json
+{
+  "theme": "sunset",
+  "personal": {
+    "name": "Your Name",
+    ...
+  }
+}
+```
+
+**Tips:**
+- The theme affects all gradients, buttons, and accent colors throughout the site
+- Changes take effect immediately when you save the config file
+- All themes are optimized for readability and accessibility
+- Try different themes to find the one that matches your personality!
+
+---
+
 ### Personal Information
 
 ```json
@@ -222,13 +266,17 @@ Result: The entire "Connect" section in the footer will be hidden, and no social
 
 1. **Open** `src/config.json` in your text editor
 
-2. **Replace** all the placeholder content:
+2. **Choose a theme** that matches your style:
+   - Set `"theme"` to one of: `purple`, `blue`, `sunset`, `forest`, `crimson`, `midnight`, `sakura`, `aurora`, `fire`, `lavender`
+   - Try different themes to see which one you like!
+
+3. **Replace** all the placeholder content:
    - Change "Your Name" to your actual name
    - Update your job title and description
    - Add your real email, phone, and location
    - Update social media links
 
-3. **Customize Skills:**
+4. **Customize Skills:**
    ```json
    "skills": [
      { "name": "Your Skill", "level": 95 },
@@ -236,14 +284,14 @@ Result: The entire "Connect" section in the footer will be hidden, and no social
    ]
    ```
 
-4. **Add Your Projects:**
+5. **Add Your Projects:**
    - Replace sample projects with your real projects
    - Update titles, descriptions, and links
    - Add relevant technology tags
 
-5. **Save** the file
+6. **Save** the file
 
-6. **View** your changes - Vite will automatically reload!
+7. **View** your changes - Vite will automatically reload!
 
 ---
 
@@ -251,6 +299,7 @@ Result: The entire "Connect" section in the footer will be hidden, and no social
 
 ```json
 {
+  "theme": "sunset",
   "personal": {
     "name": "John Doe",
     "title": "Full Stack Developer | React Specialist",

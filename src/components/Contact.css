@@ -1,6 +1,6 @@
 .contact {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient);
   color: white;
 }
 
@@ -78,7 +78,7 @@
 
 .social-link:hover {
   background: white;
-  color: #667eea;
+  color: var(--primary-color);
   transform: translateY(-3px);
 }
 
@@ -114,7 +114,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--primary-color);
 }
 
 .form-group textarea {
@@ -125,7 +125,7 @@
 .submit-btn {
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient);
   color: white;
   border: none;
   border-radius: 8px;

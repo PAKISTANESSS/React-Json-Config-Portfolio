@@ -33,7 +33,7 @@
 }
 
 .project-image {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient);
   padding: 3rem;
   display: flex;
   justify-content: center;
@@ -74,7 +74,7 @@
 
 .tag {
   background: #f0f0f0;
-  color: #667eea;
+  color: var(--primary-color);
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -82,7 +82,7 @@
 }
 
 .project-link {
-  color: #667eea;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 600;
   display: inline-flex;
