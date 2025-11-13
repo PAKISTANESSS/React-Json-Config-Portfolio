@@ -1,6 +1,12 @@
 # Personal Portfolio Website
 
+![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/build.yml?branch=main&label=build&style=flat-square)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
+![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?style=flat-square)
+
 A modern, responsive personal portfolio website built with React and Vite. Features smooth animations, a clean design, and sections for showcasing your work and skills.
+
+> **Note:** Replace `YOUR_USERNAME` and `YOUR_REPO` in the badge URLs above with your GitHub username and repository name.
 
 ## Features
 
@@ -13,6 +19,7 @@ A modern, responsive personal portfolio website built with React and Vite. Featu
 - 💼 About and skills section
 - 🔗 Social media links (auto-hide if empty)
 - ⚙️ **Zero code required** - Configure everything via JSON
+- 🔄 **CI/CD Ready** - Automated build checks with GitHub Actions
 
 ## Getting Started
 
@@ -158,6 +165,36 @@ export default {
 ```
 
 Then build and deploy the `dist` folder.
+
+## CI/CD
+
+This repository includes GitHub Actions workflows for:
+
+### Build Workflow (`.github/workflows/build.yml`)
+- ✅ Runs on every push and pull request
+- 🧪 Tests builds on Node.js 18.x and 20.x
+- 📦 Creates build artifacts
+- 🔍 Runs linter checks
+
+### Deploy Preview (`.github/workflows/deploy-preview.yml`)
+- 🎯 Automatically builds on PR creation
+- 💬 Comments on PR with build status and size
+- 📤 Uploads preview artifacts
+
+### Bundle Size Check (`.github/workflows/size-check.yml`)
+- 📊 Compares bundle sizes between base and PR
+- 📈 Shows size impact of changes
+- 💬 Comments detailed size report on PRs
+
+All workflows ensure code quality and prevent broken builds from being merged!
+
+## Contributing
+
+When creating a pull request:
+1. The build workflow will automatically run
+2. Ensure all checks pass before merging
+3. Review the bundle size impact
+4. Test with multiple themes
 
 ## License
 
