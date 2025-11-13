@@ -1,0 +1,82 @@
+{
+  "personal": {
+    "name": "Your Name",
+    "title": "Full Stack Developer | Designer | Problem Solver",
+    "description": "I create beautiful, functional, and user-centered digital experiences.",
+    "aboutText": [
+      "I'm a passionate developer with a love for creating elegant solutions to complex problems. With years of experience in web development, I specialize in building responsive and user-friendly applications.",
+      "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community."
+    ]
+  },
+  "stats": {
+    "experience": "5+",
+    "experienceLabel": "Years Experience",
+    "projects": "50+",
+    "projectsLabel": "Projects Completed",
+    "clients": "30+",
+    "clientsLabel": "Happy Clients"
+  },
+  "skills": [
+    { "name": "React", "level": 90 },
+    { "name": "JavaScript", "level": 85 },
+    { "name": "Node.js", "level": 80 },
+    { "name": "CSS/SASS", "level": 85 },
+    { "name": "TypeScript", "level": 75 },
+    { "name": "Python", "level": 70 }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, shopping cart, and payment integration.",
+      "image": "🛒",
+      "tags": ["React", "Node.js", "MongoDB"],
+      "link": "#"
+    },
+    {
+      "title": "Task Management App",
+      "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "image": "📋",
+      "tags": ["React", "Firebase", "Material-UI"],
+      "link": "#"
+    },
+    {
+      "title": "Weather Dashboard",
+      "description": "A beautiful weather dashboard that displays current weather, forecasts, and historical data with interactive charts and maps.",
+      "image": "🌤️",
+      "tags": ["React", "API Integration", "Charts.js"],
+      "link": "#"
+    },
+    {
+      "title": "Social Media Analytics",
+      "description": "An analytics dashboard for social media metrics with data visualization, reporting, and insights generation.",
+      "image": "📊",
+      "tags": ["React", "D3.js", "Express"],
+      "link": "#"
+    },
+    {
+      "title": "Portfolio Generator",
+      "description": "A tool that helps developers create beautiful portfolio websites with customizable templates and themes.",
+      "image": "🎨",
+      "tags": ["React", "Styled Components", "CMS"],
+      "link": "#"
+    },
+    {
+      "title": "Fitness Tracker",
+      "description": "A mobile-responsive fitness tracking app with workout planning, progress tracking, and nutrition logging.",
+      "image": "💪",
+      "tags": ["React Native", "Redux", "SQLite"],
+      "link": "#"
+    }
+  ],
+  "contact": {
+    "email": "your.email@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "Your City, Country"
+  },
+  "social": {
+    "github": "https://github.com/yourusername",
+    "linkedin": "https://linkedin.com/in/yourusername",
+    "twitter": "https://twitter.com/yourusername"
+  }
+}
+
