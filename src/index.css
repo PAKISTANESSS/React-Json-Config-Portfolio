@@ -3,8 +3,11 @@
   line-height: 1.5;
   font-weight: 400;
 
+  /* Default theme - will be overridden by theme selection */
   --primary-color: #667eea;
   --secondary-color: #764ba2;
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --highlight-gradient: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
 
   color-scheme: light dark;
   

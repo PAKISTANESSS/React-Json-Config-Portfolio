@@ -5,13 +5,14 @@ A modern, responsive personal portfolio website built with React and Vite. Featu
 ## Features
 
 - ✨ Modern and clean design
-- 🎨 Beautiful gradient color schemes
+- 🎨 **10 customizable color themes** - Choose your style!
 - 📱 Fully responsive layout
 - 🚀 Smooth animations and transitions
-- 📧 Contact form
+- 📧 Contact form with conditional display
 - 🎯 Project showcase section
 - 💼 About and skills section
-- 🔗 Social media links
+- 🔗 Social media links (auto-hide if empty)
+- ⚙️ **Zero code required** - Configure everything via JSON
 
 ## Getting Started
 
@@ -55,6 +56,7 @@ npm run preview
 All website content can be customized by editing a single file: **`src/config.json`**
 
 This file contains all your:
+- **Theme selection** (10 beautiful color themes)
 - Personal information (name, title, bio)
 - Skills and their proficiency levels
 - Projects portfolio
@@ -80,18 +82,21 @@ If you want to modify the component code directly, all components are in `src/co
 - `Footer.jsx` - Footer section
 - `Navbar.jsx` - Navigation bar
 
-### Colors
+### Themes & Colors
 
-The website uses CSS variables for colors. To change the color scheme, update the variables in `src/index.css`:
+The website comes with **10 pre-designed color themes**! Simply change the `theme` field in `src/config.json`:
 
-```css
-:root {
-  --primary-color: #667eea;
-  --secondary-color: #764ba2;
+```json
+{
+  "theme": "sunset"
 }
 ```
 
-You can also modify the gradient colors in various component CSS files.
+**Available themes:** `purple`, `blue`, `sunset`, `forest`, `crimson`, `midnight`, `sakura`, `aurora`, `fire`, `lavender`
+
+See `CONFIG_GUIDE.md` for theme previews and descriptions.
+
+**Advanced:** You can create custom themes by editing `src/themes.js`
 
 ### Adding Your Photo
 

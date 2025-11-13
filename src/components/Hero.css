@@ -6,7 +6,7 @@
   align-items: center;
   padding: 2rem;
   position: relative;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient);
   color: white;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .highlight {
-  background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+  background: var(--highlight-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -67,7 +67,7 @@
 
 .btn-primary {
   background: white;
-  color: #667eea;
+  color: var(--primary-color);
 }
 
 .btn-primary:hover {
@@ -83,7 +83,7 @@
 
 .btn-secondary:hover {
   background: white;
-  color: #667eea;
+  color: var(--primary-color);
   transform: translateY(-2px);
 }
 
