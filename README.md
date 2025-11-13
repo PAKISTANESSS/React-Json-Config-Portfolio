@@ -1,12 +1,19 @@
 # Personal Portfolio Website
 
 ![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/build.yml?branch=main&label=build&style=flat-square)
+![Deploy Demo](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/deploy-demo.yml?branch=main&label=demo&style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?style=flat-square)
 
 A modern, responsive personal portfolio website built with React and Vite. Features smooth animations, a clean design, and sections for showcasing your work and skills.
 
-> **Note:** Replace `YOUR_USERNAME` and `YOUR_REPO` in the badge URLs above with your GitHub username and repository name.
+## 🌐 Live Demo
+
+**[View Live Demo →](https://YOUR_USERNAME.github.io/YOUR_REPO/)**
+
+See the template in action before you use it!
+
+> **Note:** Replace `YOUR_USERNAME` and `YOUR_REPO` in the URLs above with your GitHub username and repository name.
 
 ## Features
 
@@ -23,24 +30,37 @@ A modern, responsive personal portfolio website built with React and Vite. Featu
 
 ## Getting Started
 
+### Use This Template
+
+1. Click the **"Use this template"** button at the top of this repository
+2. Choose a name for your portfolio repository
+3. Clone your new repository
+4. Follow the setup steps below
+
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - npm or yarn
 
 ### Installation
 
-1. Install dependencies:
+1. Clone your repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+```
+
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Start the development server:
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-3. Open your browser and visit `http://localhost:5173`
+4. Open your browser and visit `http://localhost:5173`
 
 ### Building for Production
 
@@ -166,6 +186,36 @@ export default {
 
 Then build and deploy the `dist` folder.
 
+## 🚀 Deployment
+
+### Deploy Your Own Portfolio
+
+See detailed deployment guides:
+- [Vercel Deployment](https://vercel.com/docs)
+- [Netlify Deployment](https://docs.netlify.com/)
+- **[GitHub Pages Deployment](DEMO_SETUP.md)** ⬅️ Step-by-step guide
+
+### Quick Deploy to GitHub Pages
+
+1. Go to **Settings** → **Pages**
+
+2. Set **Source** to "GitHub Actions"
+
+3. Push to main branch:
+   ```bash
+   git add .
+   git commit -m "Deploy to GitHub Pages"
+   git push
+   ```
+
+4. Your site will be live at `https://YOUR_USERNAME.github.io/YOUR_REPO/`
+
+**Note:** The content from `src/config.json` will be deployed as your demo.
+
+📖 **[Full GitHub Pages Setup Guide →](DEMO_SETUP.md)**
+
+---
+
 ## CI/CD
 
 This repository includes GitHub Actions workflows for:
@@ -175,6 +225,11 @@ This repository includes GitHub Actions workflows for:
 - 🧪 Tests builds on Node.js 18.x and 20.x
 - 📦 Creates build artifacts
 - 🔍 Runs linter checks
+
+### Deploy Demo (`.github/workflows/deploy-demo.yml`)
+- 🌐 Automatically deploys to GitHub Pages
+- 🚀 Updates live demo on every push
+- 📱 Accessible at `username.github.io/repo`
 
 ### Deploy Preview (`.github/workflows/deploy-preview.yml`)
 - 🎯 Automatically builds on PR creation
