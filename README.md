@@ -1,7 +1,7 @@
-# Personal Portfolio Website
+# React Portfolio Template
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/build.yml?branch=main&label=build&style=flat-square)
-![Deploy Demo](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/deploy-demo.yml?branch=main&label=demo&style=flat-square)
+![Build Status](https://img.shields.io/github/actions/workflow/status/pakistanesss/React-Json-Config-Portfolio/build.yml?branch=main&label=build&style=flat-square)
+![Deploy Demo](https://img.shields.io/github/actions/workflow/status/pakistanesss/React-Json-Config-Portfolio/deploy-demo.yml?branch=main&label=demo&style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen?style=flat-square)
 
@@ -9,11 +9,9 @@ A modern, responsive personal portfolio website built with React and Vite. Featu
 
 ## 🌐 Live Demo
 
-**[View Live Demo →](https://YOUR_USERNAME.github.io/YOUR_REPO/)**
+### **[👉 View Live Demo](https://pakistanesss.github.io/React-Json-Config-Portfolio/)** 
 
 See the template in action before you use it!
-
-> **Note:** Replace `YOUR_USERNAME` and `YOUR_REPO` in the URLs above with your GitHub username and repository name.
 
 ## Features
 
@@ -49,6 +47,8 @@ See the template in action before you use it!
 git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
 cd YOUR_REPO
 ```
+
+> Replace `YOUR_USERNAME/YOUR_REPO` with your repository details
 
 2. Install dependencies:
 ```bash
@@ -210,7 +210,9 @@ See detailed deployment guides:
 
 4. Your site will be live at `https://YOUR_USERNAME.github.io/YOUR_REPO/`
 
-**Note:** The content from `src/config.json` will be deployed as your demo.
+> Replace `YOUR_USERNAME/YOUR_REPO` with your GitHub username and repository name
+
+**Note:** The content from `src/config.json` will be deployed to GitHub Pages.
 
 📖 **[Full GitHub Pages Setup Guide →](DEMO_SETUP.md)**
 
