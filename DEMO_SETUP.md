@@ -1,12 +1,38 @@
-# GitHub Pages Demo Setup Guide
+# GitHub Pages Deployment Guide
 
-This guide explains how to set up a live demo of your portfolio on GitHub Pages.
+> **Step-by-step guide to deploy your portfolio to GitHub Pages**
+
+---
+
+## 📖 Table of Contents
+
+- [What You'll Get](#what-youll-get)
+- [Setup Steps](#setup-steps)
+- [Customizing the Demo](#customizing-the-demo)
+- [Automatic Updates](#automatic-updates)
+- [Monitoring](#monitoring)
+- [Troubleshooting](#troubleshooting)
+- [Advanced Configuration](#advanced-configuration)
+
+---
 
 ## 🌐 What You'll Get
 
-A live demo website at: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
+A **free, live demo** of your portfolio at:
 
-Example: `https://johndoe.github.io/react-portfolio-template/`
+```
+https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+```
+
+**Example:**  
+`https://pakistanesss.github.io/React-Json-Config-Portfolio/`
+
+### Features
+- ✅ **Free hosting** - No cost  
+- ✅ **HTTPS included** - Secure by default  
+- ✅ **Auto-deploy** - Updates on every push  
+- ✅ **Global CDN** - Fast loading worldwide  
+- ✅ **Custom domain support** - Use your own domain
 
 ---
 
